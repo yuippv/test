@@ -16,7 +16,9 @@ jobs:
       - checkout
       - run: npm run test
       - checkout
-      - run: ./node_modules/firebase-tools/lib/bin/firebase.js login:ci
+      - run:
+          name: Firebase Deploy
+          command: ./node_modules/.bin/firebase deploy --token "1//0gnKxQT5WUKSnCgYIARAAGBASNwF-L9Ir5d1yQ4ktzCTxQOio9xIFSMUfoPpmhqkh_x_Er5CTLiKSOzDR45jAYomujJb3i7syQR8"
 
 # # Orchestrate our job run sequence
 # workflows:
