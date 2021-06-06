@@ -13,4 +13,26 @@ jobs:
           paths:
             - node_modules
       - run: npm run build
+  test:
+    docker:
+      - image: 'circleci/node:14.17.0'
+    steps:
+      - checkout
       - run: npm run test
+
+# Orchestrate our job run sequence
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - hold:
+          type: approval
+          requires:
+            - build
+            - test
+      - deploy:
+          requires:
+            - hold
