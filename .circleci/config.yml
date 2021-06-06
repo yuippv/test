@@ -19,6 +19,12 @@ jobs:
     steps:
       - checkout
       - run: npm run test
+  deploy:
+    docker:
+      - image: 'circleci/node:14.17.0'
+    steps:
+      - checkout
+      - run: firebase deploy
 
 # Orchestrate our job run sequence
 workflows:
