@@ -34,11 +34,7 @@ build_and_test:
       - test:
           requires:
             - build
-      - hold:
-          type: approval
+      - deploy:
           requires:
             - build
             - test
-      - deploy:
-          requires:
-            - hold
