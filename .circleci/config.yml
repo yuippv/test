@@ -13,6 +13,4 @@ jobs:
           paths:
             - node_modules
       - run: npm run build
-  test:
-    steps:
       - run: npm run test
