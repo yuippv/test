@@ -13,4 +13,11 @@ jobs:
           paths:
             - node_modules
       - run: npm run build
-      
+  test:
+    steps:
+      - run: npm run test
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - test
