@@ -16,6 +16,7 @@ jobs:
       - checkout
       - run: npm run test
       - checkout
+      - run: firebase login
       - run: firebase deploy
 
 # # Orchestrate our job run sequence
