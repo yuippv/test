@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  build:
+  build-and-deploy:
     docker:
       - image: 'circleci/node:14.17.0'
     steps:
@@ -20,7 +20,7 @@ jobs:
       - checkout
       - run:
           name: Firebase Deploy
-          command: ./node_modules/.bin/firebase deploy --token="1//0gnKxQT5WUKSnCgYIARAAGBASNwF-L9Ir5d1yQ4ktzCTxQOio9xIFSMUfoPpmhqkh_x_Er5CTLiKSOzDR45jAYomujJb3i7syQR8"
+          command: ./node_modules/.bin/firebase deploy --token=1//0gnKxQT5WUKSnCgYIARAAGBASNwF-L9Ir5d1yQ4ktzCTxQOio9xIFSMUfoPpmhqkh_x_Er5CTLiKSOzDR45jAYomujJb3i7syQR8
 
 # # Orchestrate our job run sequence
 # workflows:
